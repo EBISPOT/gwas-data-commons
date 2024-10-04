@@ -2,8 +2,7 @@ package uk.ac.ebi.spot.gwas.rest.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 import org.springframework.hateoas.ResourceSupport;
 
 import java.io.Serializable;
@@ -12,6 +11,9 @@ import java.util.List;
 @EqualsAndHashCode
 @Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public final class StudyDto extends ResourceSupport implements Serializable {
 
     private static final long serialVersionUID = 3422704024513384455L;
