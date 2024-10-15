@@ -5,18 +5,18 @@ import lombok.Data;
 @Data
 public class SearchStudyParams {
 
-    String pubmedId;
+    String pubmedId = null;
 
-    String diseaseTrait;
+    String diseaseTrait = null;
 
-    String fullPvalueSet;
+    Boolean fullPvalueSet = null;
 
-    String userRequested;
+    Boolean userRequested = null;
 
-    String shortForm;
+    String shortForm = null;
 
-    String efoTrait;
+    String efoTrait = null;
 
-    String accessionId;
+    String accessionId = null;
 
 }
