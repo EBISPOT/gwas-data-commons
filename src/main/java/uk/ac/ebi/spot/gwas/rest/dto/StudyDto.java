@@ -69,7 +69,7 @@ public  class StudyDto extends RepresentationModel<StudyDto> {
     private String diseaseTrait;
 
     @JsonProperty("genotypingTechnologies")
-    private List<String>  genotypingTechnologies;
+    private Set<String>  genotypingTechnologies;
 
     @JsonProperty("efoTraits")
     private List<EFOWrapperDTO> efoTraits;
