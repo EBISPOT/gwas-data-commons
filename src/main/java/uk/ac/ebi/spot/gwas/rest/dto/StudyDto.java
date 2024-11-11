@@ -16,9 +16,9 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public  class StudyDto extends RepresentationModel<StudyDto> {
+public  class StudyDto extends RepresentationModel<StudyDto> implements Serializable {
 
-   // private static final long serialVersionUID = 3422704024513384455L;
+    private static final long serialVersionUID = 3422704024513384455L;
 
     @JsonProperty("initialSampleSize")
     private String initialSampleSize;
