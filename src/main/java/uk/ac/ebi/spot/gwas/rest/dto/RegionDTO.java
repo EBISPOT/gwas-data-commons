@@ -12,17 +12,8 @@ import java.io.Serializable;
 @Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Getter
-public class EFOWrapperDTO implements Serializable {
+public class RegionDTO implements Serializable {
 
-    private static final long serialVersionUID = -8177440499904411890L;
-
-    @JsonProperty("shortForm")
-    private String shortForm;
-
-    @JsonProperty("efoTrait")
-    private String efoTrait;
-
-
+    @JsonProperty("name")
+    private String name;
 }
-
-
