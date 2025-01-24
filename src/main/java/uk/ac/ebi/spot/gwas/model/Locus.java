@@ -93,6 +93,14 @@ public class Locus {
         this.authorReportedGenes = authorReportedGenes;
     }
 
+    public Association getAssociation() {
+        return association;
+    }
+
+    public void setAssociation(Association association) {
+        this.association = association;
+    }
+
     @Override public String toString() {
         return "Locus{" +
                 "id=" + id +
