@@ -68,12 +68,12 @@
         <repository>
             <id>spot</id>
             <name>Releases</name>
-            <url>https://wwwdev.ebi.ac.uk/gwas/nexus/repository/maven-releases/</url>
+            <url>http://gwas-gromit.ebi.ac.uk:8081/gwas/nexus/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
             <id>spot</id>
             <name>Snapshot</name>
-            <url>https://wwwdev.ebi.ac.uk/gwas/nexus/repository/maven-snapshots/</url>
+            <url>http://gwas-gromit.ebi.ac.uk:8081/gwas/nexus/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
