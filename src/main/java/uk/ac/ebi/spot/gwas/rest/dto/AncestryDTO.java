@@ -2,18 +2,27 @@ package uk.ac.ebi.spot.gwas.rest.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.*;
 import org.springframework.hateoas.RepresentationModel;
+import org.springframework.hateoas.server.core.Relation;
 
 import java.io.Serializable;
 import java.util.List;
 
-@EqualsAndHashCode
+@Data
 @Builder
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@JsonPropertyOrder({
+        "type",
+        "numberOfIndividuals",
+        "ancestralGroups",
+        "countryOfOrigin",
+        "countryOfRecruitment",
+        "_links"
+})
+@Relation(collectionRelation = "ancestries", itemRelation = "ancestry")
 public class AncestryDTO extends RepresentationModel<AncestryDTO> implements Serializable {
 
     private static final long serialVersionUID = -8788148068723768947L;
