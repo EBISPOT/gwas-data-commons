@@ -1,6 +1,5 @@
 package uk.ac.ebi.spot.gwas.rest.dto;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.*;
@@ -23,9 +22,7 @@ import java.util.List;
         "_links"
 })
 @Relation(collectionRelation = "ancestries", itemRelation = "ancestry")
-public class AncestryDTO extends RepresentationModel<AncestryDTO> implements Serializable {
-
-    private static final long serialVersionUID = -8788148068723768947L;
+public class AncestryDTO extends RepresentationModel<AncestryDTO> {
 
     @JsonProperty("type")
     private String type;

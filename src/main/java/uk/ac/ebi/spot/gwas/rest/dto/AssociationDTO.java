@@ -1,6 +1,5 @@
 package uk.ac.ebi.spot.gwas.rest.dto;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.*;
@@ -49,9 +48,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Relation(collectionRelation = "associations", itemRelation = "association")
-public class AssociationDTO  extends RepresentationModel<AssociationDTO> implements Serializable {
-
-    private static final long serialVersionUID = 7742504070749122740L;
+public class AssociationDTO  extends RepresentationModel<AssociationDTO> {
 
     @JsonProperty("associationId")
     private Long associationId;

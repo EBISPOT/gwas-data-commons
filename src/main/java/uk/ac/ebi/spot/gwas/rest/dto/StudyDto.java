@@ -8,7 +8,6 @@ import org.springframework.hateoas.RepresentationModel;
 import org.springframework.hateoas.server.core.Relation;
 
 
-import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
 
@@ -44,9 +43,7 @@ import java.util.Set;
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Relation(collectionRelation = "studies", itemRelation = "study")
-public  class StudyDto extends RepresentationModel<StudyDto> implements Serializable {
-
-    private static final long serialVersionUID = 3422704024513384455L;
+public  class StudyDto extends RepresentationModel<StudyDto> {
 
     @JsonProperty("initialSampleSize")
     private String initialSampleSize;

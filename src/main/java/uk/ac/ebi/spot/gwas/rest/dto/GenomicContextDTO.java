@@ -1,6 +1,5 @@
 package uk.ac.ebi.spot.gwas.rest.dto;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.*;
@@ -26,9 +25,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Relation(collectionRelation = "genomic_contexts", itemRelation = "genomic_context")
-public class GenomicContextDTO extends RepresentationModel<GenomicContextDTO> implements Serializable {
-
-    private static final long serialVersionUID = 5629069919999897289L;
+public class GenomicContextDTO extends RepresentationModel<GenomicContextDTO> {
 
     @JsonProperty("isIntergenic")
     private Boolean isIntergenic;

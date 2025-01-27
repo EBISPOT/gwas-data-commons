@@ -1,6 +1,5 @@
 package uk.ac.ebi.spot.gwas.rest.dto;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.*;
@@ -23,8 +22,6 @@ import java.util.List;
 @NoArgsConstructor
 @Relation(collectionRelation = "loci", itemRelation = "locus")
 public class LocusDTO extends RepresentationModel<LocusDTO> implements Serializable {
-
-    private static final long serialVersionUID = -612620519836012985L;
 
     @JsonProperty("haplotype_snp_count")
     private Integer haplotypeSnpCount;
