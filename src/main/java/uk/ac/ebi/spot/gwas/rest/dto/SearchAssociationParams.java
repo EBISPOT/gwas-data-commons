@@ -3,20 +3,18 @@ package uk.ac.ebi.spot.gwas.rest.dto;
 import lombok.Data;
 
 @Data
-public class SearchStudyParams {
+public class SearchAssociationParams {
 
     String pubmedId = null;
 
-    String diseaseTrait = null;
+    String rsId = null;
 
     Boolean fullPvalueSet = null;
 
-    Boolean userRequested = null;
-
-    String shortForm = null;
+    String accessionId = null;
 
     String efoTrait = null;
 
-    String accessionId = null;
+    String shortForm = null;
 
 }

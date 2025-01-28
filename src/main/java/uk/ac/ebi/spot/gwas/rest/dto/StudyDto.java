@@ -3,10 +3,12 @@ package uk.ac.ebi.spot.gwas.rest.dto;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
-import org.springframework.hateoas.ResourceSupport;
+import org.springframework.hateoas.RepresentationModel;
+
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 
 @EqualsAndHashCode
 @Builder
@@ -14,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public final class StudyDto extends ResourceSupport implements Serializable {
+public  class StudyDto extends RepresentationModel<StudyDto> implements Serializable {
 
     private static final long serialVersionUID = 3422704024513384455L;
 
@@ -23,6 +25,9 @@ public final class StudyDto extends ResourceSupport implements Serializable {
 
     @JsonProperty("replicationSampleSize")
     private String replicationSampleSize;
+
+    @JsonProperty("studyId")
+    private Long studyId;
 
     @JsonProperty("gxe")
     private Boolean gxe;
@@ -55,25 +60,25 @@ public final class StudyDto extends ResourceSupport implements Serializable {
     private Boolean userRequested;
 
     @JsonProperty("pubmedId")
-    private Boolean pubmedId;
+    private Integer pubmedId;
 
     @JsonProperty("platforms")
-    private List<String> platforms;
+    private String platforms;
 
     @JsonProperty("diseaseTrait")
     private String diseaseTrait;
 
     @JsonProperty("genotypingTechnologies")
-    private List<String>  genotypingTechnologies;
+    private Set<String>  genotypingTechnologies;
 
     @JsonProperty("efoTraits")
     private List<EFOWrapperDTO> efoTraits;
 
     @JsonProperty("discovery_ancestry")
-    private String discoveryAncestry;
+    private Set<String> discoveryAncestry;
 
     @JsonProperty("replication_ancestry")
-    private String replicationAncestry;
+    private Set<String> replicationAncestry;
 
     @JsonProperty("fullSummaryStats")
     private String fullSummaryStats;

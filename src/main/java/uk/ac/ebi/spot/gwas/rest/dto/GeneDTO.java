@@ -6,23 +6,22 @@ import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
-import java.io.Serializable;
+import java.util.List;
 
 @EqualsAndHashCode(callSuper = false)
 @Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Getter
-public class EFOWrapperDTO implements Serializable {
+public class GeneDTO {
 
-    private static final long serialVersionUID = -8177440499904411890L;
+    @JsonProperty("geneName")
+    private String geneName;
 
-    @JsonProperty("shortForm")
-    private String shortForm;
+    @JsonProperty("ensemblGeneIds")
+    private List<String> ensemblGeneIds;
 
-    @JsonProperty("efoTrait")
-    private String efoTrait;
+    @JsonProperty("entrezGeneIds")
+    private List<String> entrezGeneIds;
 
 
 }
-
-
