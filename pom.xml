@@ -33,7 +33,7 @@
         <repository>
             <id>spot-releases</id>
             <name>Releases</name>
-            <url>https://wwwdev.ebi.ac.uk/gwas/nexus/repository/maven-releases/</url>
+            <url>http://gwas-gromit.ebi.ac.uk:8081/gwas/nexus/repository/maven-releases/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -44,7 +44,7 @@
         <repository>
             <id>spot-snapshots</id>
             <name>Snapshot</name>
-            <url>https://wwwdev.ebi.ac.uk/gwas/nexus/repository/maven-snapshots/</url>
+            <url>http://gwas-gromit.ebi.ac.uk:8081/gwas/nexus/repository/maven-snapshots/</url>
             <releases>
                 <enabled>false</enabled>
             </releases>

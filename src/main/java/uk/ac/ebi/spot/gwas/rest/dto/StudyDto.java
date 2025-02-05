@@ -89,4 +89,10 @@ public  class StudyDto extends RepresentationModel<StudyDto> implements Serializ
     @JsonProperty("bgEfoTraits")
     private List<EFOWrapperDTO> bgEfoTraits;
 
+    @JsonProperty("cohort")
+    private String cohort;
+
+    @JsonProperty("arrayManufacturer")
+    private List<String> arrayManufacturer;
+
 }

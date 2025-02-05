@@ -19,4 +19,8 @@ public class SearchStudyParams {
 
     String accessionId = null;
 
+    String cohort = null;
+
+    Boolean gxe = null;
+
 }

@@ -39,4 +39,19 @@ public class SingleNucleotidePolymorphismDTO extends RepresentationModel<SingleN
     @JsonProperty("locations")
     private List<LocationDTO> locations;
 
+    @JsonProperty("MAF")
+    public Double maf;
+
+    @JsonProperty("minor_allele")
+    public String minorAllele;
+
+    @JsonProperty("alleles")
+    public String alleles;
+
+    @JsonProperty("most_severe_consequence")
+    public String mostSevereConsequence;
+
+    @JsonProperty("mappedGenes")
+    private List<String> mappedGenes;
+
 }
