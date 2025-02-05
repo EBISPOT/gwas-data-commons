@@ -2,19 +2,41 @@ package uk.ac.ebi.spot.gwas.rest.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.*;
 import org.springframework.hateoas.RepresentationModel;
-import java.io.Serializable;
+import org.springframework.hateoas.server.core.Relation;
 
-@EqualsAndHashCode
+
+@JsonPropertyOrder({
+        "genotyping_technology",
+        "study_accession",
+        "array_manufacturer",
+        "imputation",
+        "variant_count",
+        "summary_statistics_assembly",
+        "agreedToCc0",
+        "fullSummaryStats",
+        "study_tag",
+        "array_information",
+        "sample_description",
+        "statistical_model",
+        "study_description",
+        "trait",
+        "efo_trait",
+        "background_trait",
+        "background_efo_trait",
+        "cohort",
+        "cohort_id",
+        "_links"
+})
+@Data
 @Builder
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-public class UnpublishedStudyDTO extends RepresentationModel<UnpublishedStudyDTO> implements Serializable {
-
-    private static final long serialVersionUID = 2453586729058403606L;
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@Relation(collectionRelation = "unpublished_studies", itemRelation = "unpublished_study")
+public class UnpublishedStudyDTO extends RepresentationModel<UnpublishedStudyDTO> {
 
     @JsonProperty("study_tag")
     private String studyTag;
@@ -72,7 +94,6 @@ public class UnpublishedStudyDTO extends RepresentationModel<UnpublishedStudyDTO
 
     @JsonProperty("fullSummaryStats")
     private String fullSummaryStats;
-
 
 
 }

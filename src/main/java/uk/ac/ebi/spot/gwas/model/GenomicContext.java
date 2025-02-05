@@ -25,6 +25,7 @@ public class GenomicContext {
 
     private Long distance;
 
+
     @ManyToOne
     private SingleNucleotidePolymorphism snp;
 
@@ -156,4 +157,5 @@ public class GenomicContext {
     public void setLocation(Location location) {
         this.location = location;
     }
+    
 }
