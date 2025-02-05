@@ -30,6 +30,6 @@ public class RiskAlleleDTO {
     @JsonProperty("mappingMethod")
     private String mappingMethod;
 
-    @JsonProperty("mappingMethod")
+    @JsonProperty("isClosestGene")
     private Boolean isClosestGene;
 }

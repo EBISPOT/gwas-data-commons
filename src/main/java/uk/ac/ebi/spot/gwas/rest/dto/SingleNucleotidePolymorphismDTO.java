@@ -18,6 +18,11 @@ import java.util.List;
         "currentSnp",
         "lastUpdateDate",
         "locations",
+        "MAF",
+        "minor_allele",
+        "alleles",
+        "most_severe_consequence",
+        "mappedGenes",
         "_links"
 })
 @Data
