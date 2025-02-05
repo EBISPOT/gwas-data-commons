@@ -1,24 +1,54 @@
 package uk.ac.ebi.spot.gwas.rest.dto;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.hateoas.RepresentationModel;
+import org.springframework.hateoas.server.core.Relation;
 
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-@EqualsAndHashCode
+@JsonPropertyOrder({
+        "associationId",
+        "riskFrequency",
+        "pvalueDescription",
+        "pvalueMantissa",
+        "pvalueExponent",
+        "multiSnpHaplotype",
+        "snpInteraction",
+        "snpType",
+        "standardError",
+        "range",
+        "description",
+        "orPerCopyNum",
+        "orValue",
+        "betaNum",
+        "betaUnit",
+        "betaDirection",
+        "beta",
+        "lastMappingDate",
+        "lastUpdateDate",
+        "pValue",
+        "efoTraits",
+        "reportedTrait",
+        "accessionID",
+        "locations",
+        "mappedGenes",
+        "riskAllele",
+        "bgEfoTraits",
+        "pubmedId",
+        "firstAuthor",
+        "_links"
+})
+@Data
 @Builder
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-public class AssociationDTO  extends RepresentationModel<AssociationDTO> implements Serializable {
-
-    private static final long serialVersionUID = 7742504070749122740L;
+@Relation(collectionRelation = "associations", itemRelation = "association")
+public class AssociationDTO  extends RepresentationModel<AssociationDTO> {
 
     @JsonProperty("associationId")
     private Long associationId;

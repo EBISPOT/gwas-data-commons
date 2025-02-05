@@ -2,23 +2,48 @@ package uk.ac.ebi.spot.gwas.rest.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.*;
 import org.springframework.hateoas.RepresentationModel;
+import org.springframework.hateoas.server.core.Relation;
 
 
-import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
 
-@EqualsAndHashCode
+@JsonPropertyOrder({
+        "initialSampleSize",
+        "replicationSampleSize",
+        "studyId",
+        "gxe",
+        "gxg",
+        "snpCount",
+        "qualifier",
+        "imputed",
+        "pooled",
+        "studyDesignComment",
+        "accessionId",
+        "fullPvalueSet",
+        "userRequested",
+        "pubmedId",
+        "platforms",
+        "diseaseTrait",
+        "genotypingTechnologies",
+        "efoTraits",
+        "discovery_ancestry",
+        "replication_ancestry",
+        "fullSummaryStats",
+        "termsOfLicense",
+        "bgEfoTraits",
+        "_links"
+})
+@Data
 @Builder
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-public  class StudyDto extends RepresentationModel<StudyDto> implements Serializable {
-
-    private static final long serialVersionUID = 3422704024513384455L;
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@Relation(collectionRelation = "studies", itemRelation = "study")
+public  class StudyDto extends RepresentationModel<StudyDto> {
 
     @JsonProperty("initialSampleSize")
     private String initialSampleSize;
