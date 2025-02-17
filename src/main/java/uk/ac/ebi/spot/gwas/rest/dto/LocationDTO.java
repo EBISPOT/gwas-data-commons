@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import uk.ac.ebi.spot.gwas.model.Region;
 
 import java.io.Serializable;
 

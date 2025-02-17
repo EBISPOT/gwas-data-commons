@@ -6,7 +6,6 @@ import lombok.*;
 import org.springframework.hateoas.RepresentationModel;
 import org.springframework.hateoas.server.core.Relation;
 
-import java.io.Serializable;
 import java.sql.Date;
 
 @JsonPropertyOrder({
