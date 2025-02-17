@@ -1,8 +1,15 @@
 package uk.ac.ebi.spot.gwas.rest.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class SearchStudyParams {
 
     String pubmedId = null;
@@ -13,7 +20,7 @@ public class SearchStudyParams {
 
     Boolean userRequested = null;
 
-    String shortForm = null;
+    private String shortForm = null;
 
     String efoTrait = null;
 
@@ -30,3 +37,4 @@ public class SearchStudyParams {
 
 
 }
+

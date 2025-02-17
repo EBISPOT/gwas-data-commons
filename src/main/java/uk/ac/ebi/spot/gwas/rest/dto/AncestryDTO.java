@@ -15,10 +15,10 @@ import java.util.List;
 @NoArgsConstructor
 @JsonPropertyOrder({
         "type",
-        "numberOfIndividuals",
-        "ancestralGroups",
-        "countryOfOrigin",
-        "countryOfRecruitment",
+        "number_of_individuals",
+        "ancestral_groups",
+        "country_of_origin",
+        "country_of_recruitment",
         "_links"
 })
 @Relation(collectionRelation = "ancestries", itemRelation = "ancestry")
@@ -27,16 +27,16 @@ public class AncestryDTO extends RepresentationModel<AncestryDTO> {
     @JsonProperty("type")
     private String type;
 
-    @JsonProperty("numberOfIndividuals")
+    @JsonProperty("number_of_individuals")
     private Integer numberOfIndividuals;
 
-    @JsonProperty("ancestralGroups")
+    @JsonProperty("ancestral_groups")
     private List<AncestralGroupDTO>  ancestralGroups;
 
-    @JsonProperty("countryOfOrigin")
+    @JsonProperty("country_of_origin")
     private List<CountryDTO> countryOfOrigin;
 
-    @JsonProperty("countryOfRecruitment")
+    @JsonProperty("country_of_recruitment")
     private List<CountryDTO> countryOfRecruitment;
 
 

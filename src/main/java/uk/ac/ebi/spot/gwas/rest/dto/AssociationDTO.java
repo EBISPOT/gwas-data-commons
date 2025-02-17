@@ -12,35 +12,35 @@ import java.util.Date;
 import java.util.List;
 
 @JsonPropertyOrder({
-        "associationId",
-        "riskFrequency",
-        "pvalueDescription",
-        "pvalueMantissa",
-        "pvalueExponent",
-        "multiSnpHaplotype",
-        "snpInteraction",
-        "snpType",
-        "standardError",
+        "association_id",
+        "risk_frequency",
+        "pvalue_description",
+        "pvalue_mantissa",
+        "pvalue_exponent",
+        "multi_snp_haplotype",
+        "snp_interaction",
+        "snp_type",
+        "standard_error",
         "range",
         "description",
-        "orPerCopyNum",
-        "orValue",
-        "betaNum",
-        "betaUnit",
-        "betaDirection",
+        "or_per_copy_num",
+        "or_value",
+        "beta_num",
+        "beta_unit",
+        "beta_direction",
         "beta",
-        "lastMappingDate",
-        "lastUpdateDate",
-        "pValue",
-        "efoTraits",
-        "reportedTrait",
-        "accessionID",
+        "last_mapping_date",
+        "last_update_date",
+        "p_value",
+        "efo_traits",
+        "reported_trait",
+        "accession_id",
         "locations",
-        "mappedGenes",
-        "riskAllele",
-        "bgEfoTraits",
-        "pubmedId",
-        "firstAuthor",
+        "mapped_genes",
+        "risk_allele",
+        "bg_efo_traits",
+        "pubmed_id",
+        "first_author",
         "_links"
 })
 @Data
@@ -50,31 +50,31 @@ import java.util.List;
 @Relation(collectionRelation = "associations", itemRelation = "association")
 public class AssociationDTO  extends RepresentationModel<AssociationDTO> {
 
-    @JsonProperty("associationId")
+    @JsonProperty("association_id")
     private Long associationId;
 
-    @JsonProperty("riskFrequency")
+    @JsonProperty("risk_frequency")
     private String riskFrequency;
 
-    @JsonProperty("pvalueDescription")
+    @JsonProperty("pvalue_description")
     private String pvalueDescription;
 
-    @JsonProperty("pvalueMantissa")
+    @JsonProperty("pvalue_mantissa")
     private Integer pvalueMantissa;
 
-    @JsonProperty("pvalueExponent")
+    @JsonProperty("pvalue_exponent")
     private Integer pvalueExponent;
 
-    @JsonProperty("multiSnpHaplotype")
+    @JsonProperty("multi_snp_haplotype")
     private Boolean multiSnpHaplotype;
 
-    @JsonProperty("snpInteraction")
+    @JsonProperty("snp_interaction")
     private Boolean snpInteraction;
 
-    @JsonProperty("snpType")
+    @JsonProperty("snp_type")
     private String snpType;
 
-    @JsonProperty("standardError")
+    @JsonProperty("standard_error")
     private Float standardError;
 
     @JsonProperty("range")
@@ -83,60 +83,60 @@ public class AssociationDTO  extends RepresentationModel<AssociationDTO> {
     @JsonProperty("description")
     private String description;
 
-    @JsonProperty("orPerCopyNum")
+    @JsonProperty("or_per_copy_num")
     private Float orPerCopyNum;
 
-    @JsonProperty("orValue")
+    @JsonProperty("or_value")
     private String orValue;
 
-    @JsonProperty("betaNum")
+    @JsonProperty("beta_num")
     private Float betaNum;
 
-    @JsonProperty("betaUnit")
+    @JsonProperty("beta_unit")
     private String betaUnit;
 
-    @JsonProperty("betaDirection")
+    @JsonProperty("beta_direction")
     private String betaDirection;
 
     @JsonProperty("beta")
     private String beta;
 
-    @JsonProperty("lastMappingDate")
+    @JsonProperty("last_mapping_date")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date lastMappingDate;
 
-    @JsonProperty("lastUpdateDate")
+    @JsonProperty("last_update_date")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date lastUpdateDate;
 
-    @JsonProperty("pValue")
+    @JsonProperty("p_value")
     private Double pValue;
 
-    @JsonProperty("efoTraits")
+    @JsonProperty("efo_traits")
     private List<EFOWrapperDTO> efoTraits;
 
-    @JsonProperty("reportedTrait")
+    @JsonProperty("reported_trait")
     private List<String> reportedTrait;
 
-    @JsonProperty("accessionID")
+    @JsonProperty("accession_id")
     private String accessionID;
 
     @JsonProperty("locations")
     private List<String> locations;
 
-    @JsonProperty("mappedGenes")
+    @JsonProperty("mapped_genes")
     private List<String> mappedGenes;
 
-    @JsonProperty("riskAllele")
+    @JsonProperty("risk_allele")
     private List<String> riskAllele;
 
-    @JsonProperty("bgEfoTraits")
+    @JsonProperty("bg_efo_traits")
     private List<EFOWrapperDTO> bgEfoTraits;
 
-    @JsonProperty("pubmedId")
+    @JsonProperty("pubmed_id")
     private String pubmedId;
 
-    @JsonProperty("firstAuthor")
+    @JsonProperty("first_author")
     private String firstAuthor;
 
 

@@ -17,10 +17,10 @@ public class LocationDTO implements Serializable {
 
     private static final long serialVersionUID = 7950117053236772236L;
 
-    @JsonProperty("chromosomeName")
+    @JsonProperty("chromosome_name")
     private String chromosomeName;
 
-    @JsonProperty("chromosomePosition")
+    @JsonProperty("chromosome_position")
     private Integer chromosomePosition;
 
     @JsonProperty("region")

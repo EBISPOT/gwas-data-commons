@@ -10,7 +10,7 @@ import java.io.Serializable;
 import java.sql.Date;
 
 @JsonPropertyOrder({
-        "gcpId",
+        "gcp_id",
         "title",
         "first_author",
         "publication_date",
@@ -24,7 +24,7 @@ import java.sql.Date;
 @Relation(collectionRelation = "body_of_works", itemRelation = "body_of_work")
 public class BodyOfWorkDTO extends RepresentationModel<BodyOfWorkDTO> {
 
-    @JsonProperty("gcpId")
+    @JsonProperty("gcp_id")
     private String gcpId;
 
     @JsonProperty("title")
