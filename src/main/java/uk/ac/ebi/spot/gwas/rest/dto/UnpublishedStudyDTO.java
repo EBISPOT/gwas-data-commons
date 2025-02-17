@@ -28,6 +28,8 @@ import org.springframework.hateoas.server.core.Relation;
         "background_efo_trait",
         "cohort",
         "cohort_id",
+        "fullSummaryStats",
+        "agreedToCc0",
         "_links"
 })
 @Data

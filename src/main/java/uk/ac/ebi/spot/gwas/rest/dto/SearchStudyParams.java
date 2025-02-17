@@ -23,4 +23,10 @@ public class SearchStudyParams {
 
     Boolean gxe = null;
 
+    String ancestralGroup = null;
+
+    Integer noOfIndividuals = null;
+
+
+
 }

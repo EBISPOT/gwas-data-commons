@@ -16,7 +16,7 @@ public class EFOWrapperDTO implements Serializable {
 
     private static final long serialVersionUID = -8177440499904411890L;
 
-    @JsonProperty("shortForm")
+    @JsonProperty("efoId")
     private String shortForm;
 
     @JsonProperty("efoTrait")
