@@ -35,6 +35,8 @@ import java.util.Set;
         "fullSummaryStats",
         "termsOfLicense",
         "bgEfoTraits",
+        "cohort",
+        "arrayManufacturer",
         "_links"
 })
 @Data
