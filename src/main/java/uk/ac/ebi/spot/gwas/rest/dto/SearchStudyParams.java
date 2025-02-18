@@ -32,8 +32,8 @@ public class SearchStudyParams {
     @Parameter(name ="user_requested")
     Boolean userRequested = null;
 
-    @GWASParamName("short_form")
-    @Parameter(name ="short_form")
+    @GWASParamName("efo_id")
+    @Parameter(name ="efo_id")
     private String shortForm = null;
 
     @GWASParamName("efo_trait")
