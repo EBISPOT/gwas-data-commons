@@ -41,15 +41,6 @@ public class ErrorResponse {
 				.timestamp(dateFormat.format(new Date())).build();
 	}
 
-	public static ErrorResponse hibernateValidationResponse(ErrorResponse errorResponse,
-															BindingResult bindingResult){
-
-		Map<String, String> errorMap = new HashMap<>();
-		bindingResult.getFieldErrors().forEach(field -> errorMap.put(field.getField(), field.getDefaultMessage()));
-		errorResponse.setReport(errorMap);
-		return errorResponse;
-	}
-
 }
 
 

@@ -14,20 +14,13 @@ import java.text.SimpleDateFormat;
 @ControllerAdvice
 public class ExceptionHandlerAdvice extends ResponseEntityExceptionHandler {
 
-    private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+    private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 
-    @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleResourceNotFound(ResourceNotFoundException ex, HttpServletRequest req) {
+    @ExceptionHandler(EntityNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleResourceNotFound(EntityNotFoundException ex, HttpServletRequest req) {
         ErrorResponse error = ErrorResponse.basicResponse(HttpStatus.NOT_FOUND, ex, req, dateFormat);
         log.error(error.toString());
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
-    }
-
-    @ExceptionHandler(DuplicateResourceException.class)
-    public ResponseEntity<ErrorResponse> handleDuplicateResource(DuplicateResourceException ex, HttpServletRequest req) {
-        ErrorResponse error = ErrorResponse.basicResponse(HttpStatus.CONFLICT, ex, req, dateFormat);
-        log.error(error.toString());
-        return new ResponseEntity<>(error, HttpStatus.CONFLICT);
     }
 
     @ExceptionHandler(FormatException.class)
