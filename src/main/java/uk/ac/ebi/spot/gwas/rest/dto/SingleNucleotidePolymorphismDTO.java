@@ -7,22 +7,21 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.hateoas.RepresentationModel;
 import org.springframework.hateoas.server.core.Relation;
 
-import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 @JsonPropertyOrder({
-        "rsId",
+        "rs_id",
         "merged",
-        "functionalClass",
-        "currentSnp",
-        "lastUpdateDate",
+        "functional_class",
+        "current_snp",
+        "last_update_date",
         "locations",
-        "MAF",
+        "maf",
         "minor_allele",
         "alleles",
         "most_severe_consequence",
-        "mappedGenes",
+        "mapped_genes",
         "_links"
 })
 @Data
@@ -32,26 +31,26 @@ import java.util.List;
 @Relation(collectionRelation = "snps", itemRelation = "snp")
 public class SingleNucleotidePolymorphismDTO extends RepresentationModel<SingleNucleotidePolymorphismDTO> {
 
-    @JsonProperty("rsId")
+    @JsonProperty("rs_id")
     private String rsId;
 
     @JsonProperty("merged")
     private Long merged;
 
-    @JsonProperty("functionalClass")
+    @JsonProperty("functional_class")
     private String functionalClass;
 
-    @JsonProperty("currentSnp")
+    @JsonProperty("current_snp")
     private String currentSnp;
 
-    @JsonProperty("lastUpdateDate")
+    @JsonProperty("last_update_date")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date lastUpdateDate;
 
     @JsonProperty("locations")
     private List<LocationDTO> locations;
 
-    @JsonProperty("MAF")
+    @JsonProperty("maf")
     public Double maf;
 
     @JsonProperty("minor_allele")
@@ -63,7 +62,7 @@ public class SingleNucleotidePolymorphismDTO extends RepresentationModel<SingleN
     @JsonProperty("most_severe_consequence")
     public String mostSevereConsequence;
 
-    @JsonProperty("mappedGenes")
+    @JsonProperty("mapped_genes")
     private List<String> mappedGenes;
 
 }

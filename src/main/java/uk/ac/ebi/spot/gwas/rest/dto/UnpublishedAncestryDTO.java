@@ -10,7 +10,7 @@ import org.springframework.hateoas.server.core.Relation;
 @JsonPropertyOrder({
         "study_tag",
         "stage",
-        "sampleSize",
+        "sample_size",
         "cases",
         "controls",
         "sample_description",
@@ -34,7 +34,7 @@ public class UnpublishedAncestryDTO extends RepresentationModel<UnpublishedAnces
     @JsonProperty("stage")
     private String stage;
 
-    @JsonProperty("sampleSize")
+    @JsonProperty("sample_size")
     private Integer sampleSize;
 
     @JsonProperty("cases")

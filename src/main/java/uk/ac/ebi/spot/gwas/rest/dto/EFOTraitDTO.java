@@ -11,7 +11,7 @@ import java.io.Serializable;
 @JsonPropertyOrder({
         "trait",
         "uri",
-        "efoId",
+        "efo_id",
         "_links"
 })
 @Data
@@ -27,7 +27,7 @@ public class EFOTraitDTO extends RepresentationModel<EFOTraitDTO> {
     @JsonProperty("uri")
     private String uri;
 
-    @JsonProperty("efoId")
+    @JsonProperty("efo_id")
     private String shortForm;
 
 

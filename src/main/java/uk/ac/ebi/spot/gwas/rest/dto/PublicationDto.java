@@ -7,12 +7,11 @@ import lombok.*;
 import org.springframework.hateoas.RepresentationModel;
 import org.springframework.hateoas.server.core.Relation;
 
-import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 @JsonPropertyOrder({
-        "pubmedId",
+        "pubmed_id",
         "publication_date",
         "journal",
         "title",
@@ -26,11 +25,9 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Relation(collectionRelation = "publications", itemRelation = "publication")
-public class PublicationDto extends RepresentationModel<PublicationDto> implements Serializable {
+public class PublicationDto extends RepresentationModel<PublicationDto> {
 
-    private static final long serialVersionUID = -4455708767044282206L;
-
-    @JsonProperty("pubmedId")
+    @JsonProperty("pubmed_id")
     private String pubmedId;
 
     @JsonProperty("publication_date")

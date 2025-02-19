@@ -14,12 +14,12 @@ import java.io.Serializable;
 @Getter
 public class CountryDTO implements Serializable {
 
-    @JsonProperty("majorArea")
+    @JsonProperty("major_area")
     private String majorArea;
 
     @JsonProperty("region")
     private String region;
 
-    @JsonProperty("countryName")
+    @JsonProperty("country_name")
     private String countryName;
 }
