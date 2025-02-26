@@ -11,8 +11,6 @@ public class SearchStudyParams {
 
     Boolean fullPvalueSet = null;
 
-    Boolean userRequested = null;
-
     String shortForm = null;
 
     String efoTrait = null;
