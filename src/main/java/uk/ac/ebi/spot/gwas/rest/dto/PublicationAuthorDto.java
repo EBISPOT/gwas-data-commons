@@ -17,16 +17,16 @@ public class PublicationAuthorDto implements Serializable {
 
     private static final long serialVersionUID = -4616993986872050853L;
 
-    @JsonProperty("fullName")
+    @JsonProperty("full_name")
     private String fullName;
 
-    @JsonProperty("fullNameStandard")
+    @JsonProperty("full_name_tandard")
     private String fullNameStandard;
 
-    @JsonProperty("firstName")
+    @JsonProperty("first_name")
     private String firstName;
 
-    @JsonProperty("lastName")
+    @JsonProperty("last_name")
     private String lastName;
 
     @JsonProperty("initials")

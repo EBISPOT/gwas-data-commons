@@ -15,8 +15,8 @@ import org.springframework.hateoas.server.core.Relation;
         "imputation",
         "variant_count",
         "summary_statistics_assembly",
-        "agreedToCc0",
-        "fullSummaryStats",
+        "agreed_to_cc0",
+        "full_summary_stats",
         "study_tag",
         "array_information",
         "sample_description",
@@ -91,10 +91,10 @@ public class UnpublishedStudyDTO extends RepresentationModel<UnpublishedStudyDTO
     @JsonProperty("cohort_id")
     private String cohortId;
 
-    @JsonProperty("agreedToCc0")
+    @JsonProperty("agreed_to_cc0")
     private Boolean agreedToCc0;
 
-    @JsonProperty("fullSummaryStats")
+    @JsonProperty("full_summary_stats")
     private String fullSummaryStats;
 
 

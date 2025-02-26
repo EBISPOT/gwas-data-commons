@@ -12,6 +12,6 @@ import java.io.Serializable;
 @Getter
 public class AncestralGroupDTO implements Serializable {
 
-    @JsonProperty("ancestralGroup")
+    @JsonProperty("ancestral_group")
     private String ancestralGroup;
 }

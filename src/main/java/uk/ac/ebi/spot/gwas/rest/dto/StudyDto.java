@@ -12,31 +12,31 @@ import java.util.List;
 import java.util.Set;
 
 @JsonPropertyOrder({
-        "initialSampleSize",
-        "replicationSampleSize",
-        "studyId",
+        "initial_sample_size",
+        "replication_sample_size",
+        "study_id",
         "gxe",
         "gxg",
-        "snpCount",
+        "snp_count",
         "qualifier",
         "imputed",
         "pooled",
-        "studyDesignComment",
-        "accessionId",
-        "fullPvalueSet",
-        "userRequested",
-        "pubmedId",
+        "study_design_comment",
+        "accession_id",
+        "full_pvalue_set",
+        "user_requested",
+        "pubmed_id",
         "platforms",
-        "diseaseTrait",
-        "genotypingTechnologies",
-        "efoTraits",
+        "disease_trait",
+        "genotyping_technologies",
+        "efo_traits",
         "discovery_ancestry",
         "replication_ancestry",
-        "fullSummaryStats",
-        "termsOfLicense",
-        "bgEfoTraits",
+        "full_summary_stats",
+        "terms_of_license",
+        "bg_efo_traits",
         "cohort",
-        "arrayManufacturer",
+        "array_manufacturer",
         "_links"
 })
 @Data
@@ -47,13 +47,13 @@ import java.util.Set;
 @Relation(collectionRelation = "studies", itemRelation = "study")
 public  class StudyDto extends RepresentationModel<StudyDto> {
 
-    @JsonProperty("initialSampleSize")
+    @JsonProperty("initial_sample_size")
     private String initialSampleSize;
 
-    @JsonProperty("replicationSampleSize")
+    @JsonProperty("replication_sample_size")
     private String replicationSampleSize;
 
-    @JsonProperty("studyId")
+    @JsonProperty("study_id")
     private Long studyId;
 
     @JsonProperty("gxe")
@@ -62,7 +62,7 @@ public  class StudyDto extends RepresentationModel<StudyDto> {
     @JsonProperty("gxg")
     private Boolean gxg;
 
-    @JsonProperty("snpCount")
+    @JsonProperty("snp_count")
     private Integer snpCount;
 
     @JsonProperty("qualifier")
@@ -74,31 +74,32 @@ public  class StudyDto extends RepresentationModel<StudyDto> {
     @JsonProperty("pooled")
     private Boolean pooled;
 
-    @JsonProperty("studyDesignComment")
+    @JsonProperty("study_design_comment")
     private String studyDesignComment;
 
-    @JsonProperty("accessionId")
+    @JsonProperty("accession_id")
     private String accessionId;
+
 
     @JsonProperty("full_summary_stats_available")
     private Boolean fullPvalueSet;
 
-    @JsonProperty("userRequested")
+    @JsonProperty("user_requested")
     private Boolean userRequested;
 
-    @JsonProperty("pubmedId")
+    @JsonProperty("pubmed_id")
     private Integer pubmedId;
 
     @JsonProperty("platforms")
     private String platforms;
 
-    @JsonProperty("diseaseTrait")
+    @JsonProperty("disease_trait")
     private String diseaseTrait;
 
-    @JsonProperty("genotypingTechnologies")
+    @JsonProperty("genotyping_technologies")
     private Set<String>  genotypingTechnologies;
 
-    @JsonProperty("efoTraits")
+    @JsonProperty("efo_traits")
     private List<EFOWrapperDTO> efoTraits;
 
     @JsonProperty("discovery_ancestry")
@@ -107,19 +108,19 @@ public  class StudyDto extends RepresentationModel<StudyDto> {
     @JsonProperty("replication_ancestry")
     private Set<String> replicationAncestry;
 
-    @JsonProperty("fullSummaryStats")
+    @JsonProperty("full_summary_stats")
     private String fullSummaryStats;
 
-    @JsonProperty("termsOfLicense")
+    @JsonProperty("terms_of_license")
     private String termsOfLicense;
 
-    @JsonProperty("bgEfoTraits")
+    @JsonProperty("bg_efo_traits")
     private List<EFOWrapperDTO> bgEfoTraits;
 
     @JsonProperty("cohort")
     private String cohort;
 
-    @JsonProperty("arrayManufacturer")
+    @JsonProperty("array_manufacturer")
     private List<String> arrayManufacturer;
 
 }

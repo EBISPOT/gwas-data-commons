@@ -6,18 +6,16 @@ import lombok.*;
 import org.springframework.hateoas.RepresentationModel;
 import org.springframework.hateoas.server.core.Relation;
 
-import java.io.Serializable;
-
 @JsonPropertyOrder({
-        "isIntergenic",
-        "isUpstream",
-        "isDownstream",
+        "is_intergenic",
+        "is_upstream",
+        "is_downstream",
         "distance",
         "gene",
         "location",
         "source",
-        "mappingMethod",
-        "isClosestGene",
+        "mapping_method",
+        "is_closest_gene",
         "_links"
 })
 @Data
@@ -27,13 +25,13 @@ import java.io.Serializable;
 @Relation(collectionRelation = "genomic_contexts", itemRelation = "genomic_context")
 public class GenomicContextDTO extends RepresentationModel<GenomicContextDTO> {
 
-    @JsonProperty("isIntergenic")
+    @JsonProperty("is_intergenic")
     private Boolean isIntergenic;
 
-    @JsonProperty("isUpstream")
+    @JsonProperty("is_upstream")
     private Boolean isUpstream;
 
-    @JsonProperty("isDownstream")
+    @JsonProperty("is_downstream")
     private Boolean isDownstream;
 
     @JsonProperty("distance")
@@ -48,10 +46,10 @@ public class GenomicContextDTO extends RepresentationModel<GenomicContextDTO> {
     @JsonProperty("source")
     private String source;
 
-    @JsonProperty("mappingMethod")
+    @JsonProperty("mapping_method")
     private String mappingMethod;
 
-    @JsonProperty("isClosestGene")
+    @JsonProperty("is_closest_gene")
     private Boolean isClosestGene;
 
 }

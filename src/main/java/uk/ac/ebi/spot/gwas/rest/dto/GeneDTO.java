@@ -15,22 +15,22 @@ import java.util.List;
 @Getter
 public class GeneDTO extends RepresentationModel<GeneDTO> {
 
-    @JsonProperty("geneName")
+    @JsonProperty("gene_name")
     private String geneName;
 
-    @JsonProperty("ensemblGeneIds")
+    @JsonProperty("ensembl_gene_ids")
     private List<String> ensemblGeneIds;
 
-    @JsonProperty("entrezGeneIds")
+    @JsonProperty("entrez_gene_ids")
     private List<String> entrezGeneIds;
 
-    @JsonProperty("geneDescription")
+    @JsonProperty("gene_description")
     private String geneDescription;
 
     @JsonProperty("location")
     private String location;
 
-    @JsonProperty("cytogenicRegion")
+    @JsonProperty("cytogenic_region")
     private String cytogenicRegion;
 
     @JsonProperty("biotype")
