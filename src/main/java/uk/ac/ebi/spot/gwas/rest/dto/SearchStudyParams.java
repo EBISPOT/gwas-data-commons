@@ -28,13 +28,11 @@ public class SearchStudyParams {
     @Parameter(name = "full_pvalue_set")
     Boolean fullPvalueSet = null;
 
-    @GWASParamName("user_requested")
-    @Parameter(name ="user_requested")
-    Boolean userRequested = null;
 
     @GWASParamName("efo_id")
     @Parameter(name ="efo_id")
     private String shortForm = null;
+
 
     @GWASParamName("efo_trait")
     @Parameter(name ="efo_trait")

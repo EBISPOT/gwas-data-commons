@@ -80,7 +80,8 @@ public  class StudyDto extends RepresentationModel<StudyDto> {
     @JsonProperty("accession_id")
     private String accessionId;
 
-    @JsonProperty("full_pvalue_set")
+
+    @JsonProperty("full_summary_stats_available")
     private Boolean fullPvalueSet;
 
     @JsonProperty("user_requested")
