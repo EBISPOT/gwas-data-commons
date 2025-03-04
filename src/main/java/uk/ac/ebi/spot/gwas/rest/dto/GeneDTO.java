@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import org.springframework.hateoas.RepresentationModel;
+import org.springframework.hateoas.server.core.Relation;
 
 import java.util.List;
 
@@ -13,6 +14,7 @@ import java.util.List;
 @Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Getter
+@Relation(value = "gene", collectionRelation = "genes")
 public class GeneDTO extends RepresentationModel<GeneDTO> {
 
     @JsonProperty("gene_name")
