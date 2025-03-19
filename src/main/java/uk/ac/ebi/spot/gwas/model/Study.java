@@ -95,6 +95,12 @@ public class Study implements Trackable {
             inverseJoinColumns = @JoinColumn(name = "EFO_TRAIT_ID"))
     private Collection<EfoTrait> mappedBackgroundTraits;
 
+    @ManyToMany
+    @JoinTable(name = "STUDY_PARENT_EFO_TRAIT",
+            joinColumns = @JoinColumn(name = "STUDY_ID"),
+            inverseJoinColumns = @JoinColumn(name = "PARENT_EFO_TRAIT_ID"))
+    private Collection<EfoTrait> parentStudyEfoTraits = new ArrayList<>();
+
 
     @OneToOne(orphanRemoval = true)
     @JsonIgnore
@@ -186,6 +192,7 @@ public class Study implements Trackable {
                  Collection<EfoTrait> efoTraits,
                  DiseaseTrait backgroundTrait,
                  Collection<EfoTrait> mappedBackgroundTraits,
+                 Collection<EfoTrait> parentStudyEfoTraits,
                  Housekeeping housekeeping,
                  StudyReport studyReport, Collection<Event> events,
                  Collection<SingleNucleotidePolymorphism> snps,
@@ -213,6 +220,7 @@ public class Study implements Trackable {
         this.efoTraits = efoTraits;
         this.backgroundTrait = backgroundTrait;
         this.mappedBackgroundTraits = mappedBackgroundTraits;
+        this.parentStudyEfoTraits = parentStudyEfoTraits;
         this.housekeeping = housekeeping;
         this.studyReport = studyReport;
         this.events = events;
@@ -505,5 +513,13 @@ public class Study implements Trackable {
 
     public void setAgreedToCc0(Boolean agreedToCc0) {
         this.agreedToCc0 = agreedToCc0;
+    }
+
+    public Collection<EfoTrait> getParentStudyEfoTraits() {
+        return parentStudyEfoTraits;
+    }
+
+    public void setParentStudyEfoTraits(Collection<EfoTrait> parentStudyEfoTraits) {
+        this.parentStudyEfoTraits = parentStudyEfoTraits;
     }
 }

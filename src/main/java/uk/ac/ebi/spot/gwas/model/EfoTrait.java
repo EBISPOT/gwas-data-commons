@@ -1,11 +1,9 @@
 package uk.ac.ebi.spot.gwas.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.constraints.NotBlank;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.Collection;
 
 /**
@@ -43,6 +41,21 @@ public class EfoTrait {
 
     @ManyToMany(mappedBy = "bkgEfoTraits")
     private Collection<Association> associationsBkg;
+
+    @ManyToMany(mappedBy = "parentEfoTraits")
+    private Collection<Association> associationsParentEfo;
+
+    @ManyToMany(mappedBy = "parentStudyEfoTraits")
+    private Collection<Study> studiesParentEfo;
+
+
+    @JsonIgnore
+    @OneToMany
+    @JoinTable(name = "PARENT_CHILD_EFO_TRAIT",
+            joinColumns = @JoinColumn(name = "PARENT_EFO_TRAIT_ID"),
+            inverseJoinColumns = @JoinColumn(name = "CHILD_EFO_TRAIT_ID"))
+    private Collection<EfoTrait> parentChildEfoTraits;
+
 
     // JPA no-args constructor
     public EfoTrait() {
@@ -130,6 +143,30 @@ public class EfoTrait {
 
     public void setMongoSeqId(String mongoSeqId) {
         this.mongoSeqId = mongoSeqId;
+    }
+
+    public Collection<Association> getAssociationsParentEfo() {
+        return associationsParentEfo;
+    }
+
+    public void setAssociationsParentEfo(Collection<Association> associationsParentEfo) {
+        this.associationsParentEfo = associationsParentEfo;
+    }
+
+    public Collection<EfoTrait> getParentChildEfoTraits() {
+        return parentChildEfoTraits;
+    }
+
+    public void setParentChildEfoTraits(Collection<EfoTrait> parentChildEfoTraits) {
+        this.parentChildEfoTraits = parentChildEfoTraits;
+    }
+
+    public Collection<Study> getStudiesParentEfo() {
+        return studiesParentEfo;
+    }
+
+    public void setStudiesParentEfo(Collection<Study> studiesParentEfo) {
+        this.studiesParentEfo = studiesParentEfo;
     }
 
     @Override
