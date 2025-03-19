@@ -17,7 +17,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class ParamNameProcessor extends ServletModelAttributeMethodProcessor {
 
-    @Autowired
+    @Autowired(required = false)
     private RequestMappingHandlerAdapter requestMappingHandlerAdapter;
 
     private static final Map<Class<?>, Map<String, String>> PARAM_MAPPINGS_CACHE = new ConcurrentHashMap<>(256);

@@ -85,6 +85,12 @@ public class Association implements Trackable {
             inverseJoinColumns = @JoinColumn(name = "EFO_TRAIT_ID"))
     private Collection<EfoTrait> bkgEfoTraits = new ArrayList<>();
 
+    @ManyToMany
+    @JoinTable(name = "ASSOCIATION_PARENT_EFO_TRAIT",
+            joinColumns = @JoinColumn(name = "ASSOCIATION_ID"),
+            inverseJoinColumns = @JoinColumn(name = "PARENT_EFO_TRAIT_ID"))
+    private Collection<EfoTrait> parentEfoTraits = new ArrayList<>();
+
     @JsonIgnore
     @OneToOne(mappedBy = "association", orphanRemoval = true)
     private AssociationReport associationReport;
@@ -171,6 +177,7 @@ public class Association implements Trackable {
                        Collection<Locus> loci,
                        Collection<EfoTrait> efoTraits,
                        Collection<EfoTrait> bkgEfoTraits,
+                       Collection<EfoTrait> parentEfoTraits,
                        AssociationReport associationReport,
                        Collection<AssociationValidationReport> associationValidationReport,
                        Date lastMappingDate,
@@ -200,6 +207,7 @@ public class Association implements Trackable {
         this.loci = loci;
         this.efoTraits = efoTraits;
         this.bkgEfoTraits = bkgEfoTraits;
+        this.parentEfoTraits = parentEfoTraits;
         this.associationReport = associationReport;
         this.associationValidationReports = associationValidationReport;
         this.lastMappingDate = lastMappingDate;
@@ -356,6 +364,14 @@ public class Association implements Trackable {
 
     public void setBkgEfoTraits(Collection<EfoTrait> bkgEfoTraits) {
         this.bkgEfoTraits = bkgEfoTraits;
+    }
+
+    public Collection<EfoTrait> getParentEfoTraits() {
+        return parentEfoTraits;
+    }
+
+    public void setParentEfoTraits(Collection<EfoTrait> parentEfoTraits) {
+        this.parentEfoTraits = parentEfoTraits;
     }
 
     public void addBkgEfoTrait(EfoTrait bkgEfoTrait) {
