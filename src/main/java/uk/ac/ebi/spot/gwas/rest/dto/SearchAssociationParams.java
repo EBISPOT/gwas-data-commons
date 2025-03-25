@@ -33,4 +33,8 @@ public class SearchAssociationParams {
     @Parameter(name = "short_form")
     String shortForm = null;
 
+    @GWASParamName("show_child_trait")
+    @Parameter(name = "show_child_trait")
+    Boolean showChildTrait = null;
+
 }
