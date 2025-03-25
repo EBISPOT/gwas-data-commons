@@ -53,5 +53,9 @@ public class SearchStudyParams {
     @GWASParamName("no_of_individuals")
     @Parameter(name ="no_of_individuals")
     Integer noOfIndividuals = null;
+
+    @GWASParamName("show_child_trait")
+    @Parameter(name = "show_child_trait")
+    Boolean showChildTrait = null;
 }
 
