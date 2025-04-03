@@ -22,7 +22,7 @@ import org.springframework.hateoas.server.core.Relation;
         "sample_description",
         "statistical_model",
         "study_description",
-        "trait",
+        "disease_trait",
         "efo_trait",
         "background_trait",
         "background_efo_trait",
@@ -30,6 +30,8 @@ import org.springframework.hateoas.server.core.Relation;
         "cohort_id",
         "fullSummaryStats",
         "agreedToCc0",
+        "title",
+        "first_Author",
         "_links"
 })
 @Data
@@ -70,7 +72,7 @@ public class UnpublishedStudyDTO extends RepresentationModel<UnpublishedStudyDTO
     @JsonProperty("study_description")
     private String studyDescription;
 
-    @JsonProperty("trait")
+    @JsonProperty("disease_trait")
     private String trait;
 
     @JsonProperty("efo_trait")
@@ -96,6 +98,12 @@ public class UnpublishedStudyDTO extends RepresentationModel<UnpublishedStudyDTO
 
     @JsonProperty("full_summary_stats")
     private String fullSummaryStats;
+
+    @JsonProperty("title")
+    private String title;
+
+    @JsonProperty("first_Author")
+    private String firstAuthor;
 
 
 }
