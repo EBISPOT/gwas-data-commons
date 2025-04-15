@@ -9,12 +9,14 @@ import uk.ac.ebi.spot.gwas.annotation.GWASParamName;
 @ParameterObject
 public class SearchEfoParams {
 
+    @GWASParamName("efo_trait")
+    @Parameter(name = "efo_trait")
     private String trait;
 
     private String uri;
 
-    @GWASParamName("short_form")
-    @Parameter(name = "short_form")
+    @GWASParamName("efo_id")
+    @Parameter(name = "efo_id")
     private String shortForm;
 
     @GWASParamName("pubmed_id")
