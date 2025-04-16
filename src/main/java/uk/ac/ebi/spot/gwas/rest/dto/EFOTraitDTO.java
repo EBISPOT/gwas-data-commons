@@ -9,7 +9,7 @@ import org.springframework.hateoas.server.core.Relation;
 import java.io.Serializable;
 
 @JsonPropertyOrder({
-        "trait",
+        "efo_trait",
         "uri",
         "efo_id",
         "_links"
@@ -21,7 +21,7 @@ import java.io.Serializable;
 @Relation(collectionRelation = "efo_traits", itemRelation = "efo_trait")
 public class EFOTraitDTO extends RepresentationModel<EFOTraitDTO> {
 
-    @JsonProperty("trait")
+    @JsonProperty("efo_trait")
     private String trait;
 
     @JsonProperty("uri")

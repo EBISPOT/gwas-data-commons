@@ -17,7 +17,7 @@ import uk.ac.ebi.spot.gwas.annotation.GWASParamName;
 public class SearchStudyParams {
 
     @GWASParamName("pubmed_id")
-    @Parameter(name = "pubmed_id", description = "Publication Id", example = "39644095")
+    @Parameter(name = "pubmed_id", description = "Publication Id")
     String pubmedId = null;
 
     @GWASParamName("disease_trait")

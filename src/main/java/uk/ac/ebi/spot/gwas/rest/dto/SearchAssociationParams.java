@@ -29,8 +29,8 @@ public class SearchAssociationParams {
     @Parameter(name = "efo_trait")
     String efoTrait = null;
 
-    @GWASParamName("short_form")
-    @Parameter(name = "short_form")
+    @GWASParamName("efo_id")
+    @Parameter(name = "efo_id")
     String shortForm = null;
 
     @GWASParamName("show_child_trait")
