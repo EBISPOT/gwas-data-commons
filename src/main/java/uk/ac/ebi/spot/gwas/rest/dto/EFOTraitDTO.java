@@ -9,7 +9,7 @@ import org.springframework.hateoas.server.core.Relation;
 import java.io.Serializable;
 
 @JsonPropertyOrder({
-        "trait",
+        "efo_trait",
         "uri",
         "efo_id",
         "_links"
