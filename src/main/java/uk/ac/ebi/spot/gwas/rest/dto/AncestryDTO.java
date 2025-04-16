@@ -1,36 +1,41 @@
 package uk.ac.ebi.spot.gwas.rest.dto;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.*;
 import org.springframework.hateoas.RepresentationModel;
+import org.springframework.hateoas.server.core.Relation;
 
-import java.io.Serializable;
 import java.util.List;
 
-@EqualsAndHashCode
+@Data
 @Builder
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-public class AncestryDTO extends RepresentationModel<AncestryDTO> implements Serializable {
-
-    private static final long serialVersionUID = -8788148068723768947L;
+@JsonPropertyOrder({
+        "type",
+        "number_of_individuals",
+        "ancestral_groups",
+        "country_of_origin",
+        "country_of_recruitment",
+        "_links"
+})
+@Relation(collectionRelation = "ancestries", itemRelation = "ancestry")
+public class AncestryDTO extends RepresentationModel<AncestryDTO> {
 
     @JsonProperty("type")
     private String type;
 
-    @JsonProperty("numberOfIndividuals")
+    @JsonProperty("number_of_individuals")
     private Integer numberOfIndividuals;
 
-    @JsonProperty("ancestralGroups")
+    @JsonProperty("ancestral_groups")
     private List<AncestralGroupDTO>  ancestralGroups;
 
-    @JsonProperty("countryOfOrigin")
+    @JsonProperty("country_of_origin")
     private List<CountryDTO> countryOfOrigin;
 
-    @JsonProperty("countryOfRecruitment")
+    @JsonProperty("country_of_recruitment")
     private List<CountryDTO> countryOfRecruitment;
 
 

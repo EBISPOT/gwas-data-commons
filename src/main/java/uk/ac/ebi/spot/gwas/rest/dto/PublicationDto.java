@@ -1,30 +1,36 @@
 package uk.ac.ebi.spot.gwas.rest.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.*;
 import org.springframework.hateoas.RepresentationModel;
+import org.springframework.hateoas.server.core.Relation;
 
-import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-@EqualsAndHashCode
-@Builder
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@AllArgsConstructor
-@NoArgsConstructor
+@JsonPropertyOrder({
+        "pubmed_id",
+        "publication_date",
+        "journal",
+        "title",
+        "authors",
+        "first_author",
+        "_links"
+})
 @Getter
 @Setter
-public class PublicationDto extends RepresentationModel<PublicationDto> implements Serializable {
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Relation(collectionRelation = "publications", itemRelation = "publication")
+public class PublicationDto extends RepresentationModel<PublicationDto> {
 
-    private static final long serialVersionUID = -4455708767044282206L;
-
-    @JsonProperty("pubmedId")
+    @JsonProperty("pubmed_id")
     private String pubmedId;
 
-    @JsonProperty("publicationDate")
+    @JsonProperty("publication_date")
     @JsonFormat(pattern="YYYY-MM-dd")
     private Date publicationDate;
 
@@ -37,7 +43,7 @@ public class PublicationDto extends RepresentationModel<PublicationDto> implemen
     @JsonProperty("authors")
     private List<PublicationAuthorDto> authors;
 
-    @JsonProperty("firstAuthor")
+    @JsonProperty("first_author")
     private PublicationAuthorDto firstAuthor;
 
 }

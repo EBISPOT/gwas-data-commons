@@ -1,29 +1,37 @@
 package uk.ac.ebi.spot.gwas.rest.dto;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.*;
 import org.springframework.hateoas.RepresentationModel;
+import org.springframework.hateoas.server.core.Relation;
 
-import java.io.Serializable;
-
-@EqualsAndHashCode
+@JsonPropertyOrder({
+        "is_intergenic",
+        "is_upstream",
+        "is_downstream",
+        "distance",
+        "gene",
+        "location",
+        "source",
+        "mapping_method",
+        "is_closest_gene",
+        "_links"
+})
+@Data
 @Builder
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-public class GenomicContextDTO extends RepresentationModel<GenomicContextDTO> implements Serializable {
+@Relation(collectionRelation = "genomic_contexts", itemRelation = "genomic_context")
+public class GenomicContextDTO extends RepresentationModel<GenomicContextDTO> {
 
-    private static final long serialVersionUID = 5629069919999897289L;
-
-    @JsonProperty("isIntergenic")
+    @JsonProperty("is_intergenic")
     private Boolean isIntergenic;
 
-    @JsonProperty("isUpstream")
+    @JsonProperty("is_upstream")
     private Boolean isUpstream;
 
-    @JsonProperty("isDownstream")
+    @JsonProperty("is_downstream")
     private Boolean isDownstream;
 
     @JsonProperty("distance")
@@ -38,10 +46,10 @@ public class GenomicContextDTO extends RepresentationModel<GenomicContextDTO> im
     @JsonProperty("source")
     private String source;
 
-    @JsonProperty("mappingMethod")
+    @JsonProperty("mapping_method")
     private String mappingMethod;
 
-    @JsonProperty("isClosestGene")
+    @JsonProperty("is_closest_gene")
     private Boolean isClosestGene;
 
 }

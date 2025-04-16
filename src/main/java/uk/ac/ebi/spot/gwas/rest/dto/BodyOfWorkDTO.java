@@ -1,33 +1,38 @@
 package uk.ac.ebi.spot.gwas.rest.dto;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.*;
 import org.springframework.hateoas.RepresentationModel;
+import org.springframework.hateoas.server.core.Relation;
 
-import java.io.Serializable;
 import java.sql.Date;
 
-@EqualsAndHashCode
+@JsonPropertyOrder({
+        "gcp_id",
+        "title",
+        "first_author",
+        "publication_date",
+        "doi",
+        "_links"
+})
+@Data
 @Builder
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-public class BodyOfWorkDTO extends RepresentationModel<BodyOfWorkDTO> implements Serializable {
+@Relation(collectionRelation = "body_of_works", itemRelation = "body_of_work")
+public class BodyOfWorkDTO extends RepresentationModel<BodyOfWorkDTO> {
 
-    private static final long serialVersionUID = 4039413000981023870L;
-
-    @JsonProperty("gcpId")
+    @JsonProperty("gcp_id")
     private String gcpId;
 
     @JsonProperty("title")
     private String title;
 
-    @JsonProperty("firstAuthor")
+    @JsonProperty("first_author")
     private String firstAuthor;
 
-    @JsonProperty("publicationDate")
+    @JsonProperty("publication_date")
     private Date publicationDate;
 
     @JsonProperty("doi")

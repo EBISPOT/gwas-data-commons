@@ -2,31 +2,58 @@ package uk.ac.ebi.spot.gwas.rest.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.*;
 import org.springframework.hateoas.RepresentationModel;
+import org.springframework.hateoas.server.core.Relation;
 
 
-import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
 
-@EqualsAndHashCode
+@JsonPropertyOrder({
+        "initial_sample_size",
+        "replication_sample_size",
+        "study_id",
+        "gxe",
+        "gxg",
+        "snp_count",
+        "qualifier",
+        "imputed",
+        "pooled",
+        "study_design_comment",
+        "accession_id",
+        "full_pvalue_set",
+        "user_requested",
+        "pubmed_id",
+        "platforms",
+        "disease_trait",
+        "genotyping_technologies",
+        "efo_traits",
+        "discovery_ancestry",
+        "replication_ancestry",
+        "full_summary_stats",
+        "terms_of_license",
+        "bg_efo_traits",
+        "cohort",
+        "array_manufacturer",
+        "_links"
+})
+@Data
 @Builder
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-public  class StudyDto extends RepresentationModel<StudyDto> implements Serializable {
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@Relation(collectionRelation = "studies", itemRelation = "study")
+public  class StudyDto extends RepresentationModel<StudyDto> {
 
-    private static final long serialVersionUID = 3422704024513384455L;
-
-    @JsonProperty("initialSampleSize")
+    @JsonProperty("initial_sample_size")
     private String initialSampleSize;
 
-    @JsonProperty("replicationSampleSize")
+    @JsonProperty("replication_sample_size")
     private String replicationSampleSize;
 
-    @JsonProperty("studyId")
+    @JsonProperty("study_id")
     private Long studyId;
 
     @JsonProperty("gxe")
@@ -35,7 +62,7 @@ public  class StudyDto extends RepresentationModel<StudyDto> implements Serializ
     @JsonProperty("gxg")
     private Boolean gxg;
 
-    @JsonProperty("snpCount")
+    @JsonProperty("snp_count")
     private Integer snpCount;
 
     @JsonProperty("qualifier")
@@ -47,31 +74,32 @@ public  class StudyDto extends RepresentationModel<StudyDto> implements Serializ
     @JsonProperty("pooled")
     private Boolean pooled;
 
-    @JsonProperty("studyDesignComment")
+    @JsonProperty("study_design_comment")
     private String studyDesignComment;
 
-    @JsonProperty("accessionId")
+    @JsonProperty("accession_id")
     private String accessionId;
 
-    @JsonProperty("fullPvalueSet")
+
+    @JsonProperty("full_summary_stats_available")
     private Boolean fullPvalueSet;
 
-    @JsonProperty("userRequested")
+    @JsonProperty("user_requested")
     private Boolean userRequested;
 
-    @JsonProperty("pubmedId")
+    @JsonProperty("pubmed_id")
     private Integer pubmedId;
 
     @JsonProperty("platforms")
     private String platforms;
 
-    @JsonProperty("diseaseTrait")
+    @JsonProperty("disease_trait")
     private String diseaseTrait;
 
-    @JsonProperty("genotypingTechnologies")
+    @JsonProperty("genotyping_technologies")
     private Set<String>  genotypingTechnologies;
 
-    @JsonProperty("efoTraits")
+    @JsonProperty("efo_traits")
     private List<EFOWrapperDTO> efoTraits;
 
     @JsonProperty("discovery_ancestry")
@@ -80,13 +108,19 @@ public  class StudyDto extends RepresentationModel<StudyDto> implements Serializ
     @JsonProperty("replication_ancestry")
     private Set<String> replicationAncestry;
 
-    @JsonProperty("fullSummaryStats")
+    @JsonProperty("full_summary_stats")
     private String fullSummaryStats;
 
-    @JsonProperty("termsOfLicense")
+    @JsonProperty("terms_of_license")
     private String termsOfLicense;
 
-    @JsonProperty("bgEfoTraits")
+    @JsonProperty("bg_efo_traits")
     private List<EFOWrapperDTO> bgEfoTraits;
+
+    @JsonProperty("cohort")
+    private String cohort;
+
+    @JsonProperty("array_manufacturer")
+    private List<String> arrayManufacturer;
 
 }

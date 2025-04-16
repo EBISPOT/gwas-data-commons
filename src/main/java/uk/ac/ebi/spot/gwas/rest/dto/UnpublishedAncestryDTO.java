@@ -2,15 +2,30 @@ package uk.ac.ebi.spot.gwas.rest.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.*;
 import org.springframework.hateoas.RepresentationModel;
+import org.springframework.hateoas.server.core.Relation;
 
-@EqualsAndHashCode
+@JsonPropertyOrder({
+        "study_tag",
+        "stage",
+        "sample_size",
+        "cases",
+        "controls",
+        "sample_description",
+        "ancestry_category",
+        "ancestry",
+        "ancestry_description",
+        "country_recruitment",
+        "_links"
+})
+@Data
 @Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Relation(collectionRelation = "unpublished_ancestries", itemRelation = "unpublished_ancestry")
 public class UnpublishedAncestryDTO extends RepresentationModel<UnpublishedAncestryDTO> {
 
     @JsonProperty("study_tag")
@@ -19,7 +34,7 @@ public class UnpublishedAncestryDTO extends RepresentationModel<UnpublishedAnces
     @JsonProperty("stage")
     private String stage;
 
-    @JsonProperty("sampleSize")
+    @JsonProperty("sample_size")
     private Integer sampleSize;
 
     @JsonProperty("cases")

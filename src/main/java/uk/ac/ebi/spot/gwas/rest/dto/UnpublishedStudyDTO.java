@@ -2,19 +2,45 @@ package uk.ac.ebi.spot.gwas.rest.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.*;
 import org.springframework.hateoas.RepresentationModel;
-import java.io.Serializable;
+import org.springframework.hateoas.server.core.Relation;
 
-@EqualsAndHashCode
+
+@JsonPropertyOrder({
+        "genotyping_technology",
+        "study_accession",
+        "array_manufacturer",
+        "imputation",
+        "variant_count",
+        "summary_statistics_assembly",
+        "agreed_to_cc0",
+        "full_summary_stats",
+        "study_tag",
+        "array_information",
+        "sample_description",
+        "statistical_model",
+        "study_description",
+        "disease_trait",
+        "efo_trait",
+        "background_trait",
+        "background_efo_trait",
+        "cohort",
+        "cohort_id",
+        "fullSummaryStats",
+        "agreedToCc0",
+        "title",
+        "first_Author",
+        "_links"
+})
+@Data
 @Builder
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-public class UnpublishedStudyDTO extends RepresentationModel<UnpublishedStudyDTO> implements Serializable {
-
-    private static final long serialVersionUID = 2453586729058403606L;
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@Relation(collectionRelation = "unpublished_studies", itemRelation = "unpublished_study")
+public class UnpublishedStudyDTO extends RepresentationModel<UnpublishedStudyDTO> {
 
     @JsonProperty("study_tag")
     private String studyTag;
@@ -46,7 +72,7 @@ public class UnpublishedStudyDTO extends RepresentationModel<UnpublishedStudyDTO
     @JsonProperty("study_description")
     private String studyDescription;
 
-    @JsonProperty("trait")
+    @JsonProperty("disease_trait")
     private String trait;
 
     @JsonProperty("efo_trait")
@@ -67,12 +93,17 @@ public class UnpublishedStudyDTO extends RepresentationModel<UnpublishedStudyDTO
     @JsonProperty("cohort_id")
     private String cohortId;
 
-    @JsonProperty("agreedToCc0")
+    @JsonProperty("agreed_to_cc0")
     private Boolean agreedToCc0;
 
-    @JsonProperty("fullSummaryStats")
+    @JsonProperty("full_summary_stats")
     private String fullSummaryStats;
 
+    @JsonProperty("title")
+    private String title;
+
+    @JsonProperty("first_Author")
+    private String firstAuthor;
 
 
 }

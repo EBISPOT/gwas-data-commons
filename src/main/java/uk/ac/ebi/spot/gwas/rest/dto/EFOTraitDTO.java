@@ -1,28 +1,33 @@
 package uk.ac.ebi.spot.gwas.rest.dto;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.*;
 import org.springframework.hateoas.RepresentationModel;
+import org.springframework.hateoas.server.core.Relation;
+
 import java.io.Serializable;
 
-@EqualsAndHashCode(callSuper = false)
+@JsonPropertyOrder({
+        "efo_trait",
+        "uri",
+        "efo_id",
+        "_links"
+})
+@Data
 @Builder
-@JsonInclude(JsonInclude.Include.NON_NULL)
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-public class EFOTraitDTO extends RepresentationModel<EFOTraitDTO> implements Serializable {
+@Relation(collectionRelation = "efo_traits", itemRelation = "efo_trait")
+public class EFOTraitDTO extends RepresentationModel<EFOTraitDTO> {
 
-    private static final long serialVersionUID = -2324937934189184000L;
-
-    @JsonProperty("trait")
+    @JsonProperty("efo_trait")
     private String trait;
 
     @JsonProperty("uri")
     private String uri;
 
-    @JsonProperty("shortForm")
+    @JsonProperty("efo_id")
     private String shortForm;
 
 

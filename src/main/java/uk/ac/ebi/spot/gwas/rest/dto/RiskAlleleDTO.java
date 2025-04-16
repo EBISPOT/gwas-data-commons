@@ -12,24 +12,24 @@ import lombok.Getter;
 @Getter
 public class RiskAlleleDTO {
 
-    @JsonProperty("riskAlleleName")
+    @JsonProperty("risk_allele_name")
     private String riskAlleleName;
 
-    @JsonProperty("riskFrequency")
+    @JsonProperty("risk_frequency")
     private String riskFrequency;
 
-    @JsonProperty("genomeWide")
+    @JsonProperty("genome_wide")
     private Boolean genomeWide = false;
 
-    @JsonProperty("limitedList")
+    @JsonProperty("limited_list")
     private Boolean limitedList = false;
 
     @JsonProperty("source")
     private String source;
 
-    @JsonProperty("mappingMethod")
+    @JsonProperty("mapping_method")
     private String mappingMethod;
 
-    @JsonProperty("mappingMethod")
+    @JsonProperty("is_closest_gene")
     private Boolean isClosestGene;
 }
