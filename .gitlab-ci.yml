@@ -2,6 +2,13 @@ image: docker:latest
 services:
   - docker:dind
 
+before_script:
+  - apt-get update && apt-get install -y gnupg
+  - echo "$GPG_PRIVATE_KEY" | gpg --batch --import
+  - echo "use-agent" >> ~/.gnupg/gpg.conf
+  - echo "allow-loopback-pinentry" >> ~/.gnupg/gpg-agent.conf
+  - echo RELOADAGENT | gpg-connect-agent
+
 stages:
   - build
 
