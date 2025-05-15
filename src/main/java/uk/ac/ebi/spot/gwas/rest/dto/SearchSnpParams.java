@@ -10,39 +10,29 @@ import uk.ac.ebi.spot.gwas.annotation.GWASParamName;
 public class SearchSnpParams {
 
     @GWASParamName("rs_id")
-    @Parameter(name = "rs_id", description = "Strongest SNP; if a haplotype it may include more than one" +
-            " rs number (multiple SNPs comprising the haplotype) <br/> <br/>" +
-            "<i> Example </i> : rs3093017 ")
+    @Parameter(name = "rs_id")
     String rsId = null;
 
     @GWASParamName("bp_location")
-    @Parameter(name = "bp_location" , description = "search for SNPs via their base pair location <br/> <br/>" +
-            "<i> Example </i> : 95000000")
+    @Parameter(name = "bp_location")
     Integer bpLocation = null;
 
     @GWASParamName("bp_start")
-    @Parameter(name = "bp_start", description = "Search for SNPs on a certain chromosome " +
-            "and within a given base pair location range <br/> <br/>" +
-                     "<i> Example </i> : 95000000")
+    @Parameter(name = "bp_start")
     Long bpStart = null;
 
     @GWASParamName("bp_end")
-    @Parameter(name = "bp_end", description = "Search for SNPs on a certain chromosome " +
-            "and within a given base pair location range <br/> <br/>" +
-            "<i> Example </i> : 95000000")
+    @Parameter(name = "bp_end")
     Long bpEnd = null;
 
     @GWASParamName("pubmed_id")
-    @Parameter(name = "pubmed_id", description = "pubmedId of the publication <br/> <br/>" +
-            "<i> Example </i> : 35241825")
+    @Parameter(name = "pubmed_id")
     String pubmedId = null;
 
-    @Parameter(name = "chromosome", description = "Search for SNPs on a certain chromosome <br/> <br/>" +
-            "<i> Example </i> : 13")
+    @Parameter(name = "chromosome")
     String chromosome = null;
 
-    @Parameter(name = "gene", description = "Search for SNPs via a gene using parameter geneName <br/> <br/>" +
-            "<i> Example </i> : 13")
+    @Parameter(name = "gene")
     String gene =  null;
 
 }

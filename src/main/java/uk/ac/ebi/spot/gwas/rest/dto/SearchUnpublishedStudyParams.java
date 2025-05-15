@@ -10,27 +10,22 @@ import uk.ac.ebi.spot.gwas.annotation.GWASParamName;
 public class SearchUnpublishedStudyParams {
 
     @GWASParamName("disease_trait")
-    @Parameter(name = "disease_trait", description = "Free text description of the trait investigated in this study <br/> <br/>" +
-            "<i> Example </i> : Early-onset Parkinson's disease")
+    @Parameter(name = "disease_trait")
     String diseaseTrait = null;
 
     @GWASParamName("accession_id")
-    @Parameter(name = "accession_id",  description = "The study’s GWAS Catalog accession ID <br/> <br/>" +
-            "<i> Example </i> : GCST000854")
+    @Parameter(name = "accession_id")
     String accessionId = null;
 
-    @Parameter(name = "title",  description = "Title of manuscript the GWAS is included in <br/> <br/>" +
-            "<i> Example </i> : Genome-wide association study")
+    @Parameter(name = "title")
     String title = null;
 
     @GWASParamName("first_author")
-    @Parameter(name = "first_author", description = "Last name and initials of first author <br/> <br/>" +
-            "<i> Example </i> : Doe John")
+    @Parameter(name = "first_author")
     String firstAuthor = null;
 
     @GWASParamName("cohort")
-    @Parameter(name = "cohort", description = "Discovery stage cohorts used in this study <br/> <br/>" +
-            "<i> Example </i> : <i> Example </i> : BioImage")
+    @Parameter(name = "cohort")
     String cohort = null;
 
 
