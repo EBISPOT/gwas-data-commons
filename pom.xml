@@ -29,7 +29,7 @@
     </properties>
 
 
-    <repositories>
+   <!-- <repositories>
         <repository>
             <id>spot-releases</id>
             <name>Releases</name>
@@ -62,7 +62,7 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
-    </repositories>
+    </repositories>-->
 
     <distributionManagement>
         <repository>
