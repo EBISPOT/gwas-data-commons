@@ -64,7 +64,7 @@
         </repository>
     </repositories>-->
 
-    <distributionManagement>
+<!--    <distributionManagement>
         <repository>
             <id>spot</id>
             <name>Releases</name>
@@ -75,7 +75,7 @@
             <name>Snapshot</name>
             <url>http://gwas-gromit.ebi.ac.uk:8081/gwas/nexus/repository/maven-snapshots/</url>
         </snapshotRepository>
-    </distributionManagement>
+    </distributionManagement>-->
 
     <build>
         <plugins>
