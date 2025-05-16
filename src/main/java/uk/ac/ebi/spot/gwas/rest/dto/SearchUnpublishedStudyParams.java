@@ -17,12 +17,15 @@ public class SearchUnpublishedStudyParams {
     @Parameter(name = "accession_id")
     String accessionId = null;
 
+    @Parameter(name = "title")
     String title = null;
 
     @GWASParamName("first_author")
     @Parameter(name = "first_author")
     String firstAuthor = null;
 
+    @GWASParamName("cohort")
+    @Parameter(name = "cohort")
     String cohort = null;
 
 
