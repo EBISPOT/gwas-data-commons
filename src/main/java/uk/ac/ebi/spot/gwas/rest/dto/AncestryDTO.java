@@ -1,5 +1,6 @@
 package uk.ac.ebi.spot.gwas.rest.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.*;
@@ -20,6 +21,7 @@ import java.util.List;
         "country_of_recruitment",
         "_links"
 })
+@JsonInclude(JsonInclude.Include.NON_NULL)
 @Relation(collectionRelation = "ancestries", itemRelation = "ancestry")
 public class AncestryDTO extends RepresentationModel<AncestryDTO> {
 
