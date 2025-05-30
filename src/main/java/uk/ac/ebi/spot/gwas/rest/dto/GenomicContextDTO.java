@@ -1,5 +1,6 @@
 package uk.ac.ebi.spot.gwas.rest.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.*;
@@ -22,6 +23,7 @@ import org.springframework.hateoas.server.core.Relation;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 @Relation(collectionRelation = "genomic_contexts", itemRelation = "genomic_context")
 public class GenomicContextDTO extends RepresentationModel<GenomicContextDTO> {
 

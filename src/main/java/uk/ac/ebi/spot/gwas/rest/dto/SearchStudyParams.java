@@ -17,7 +17,7 @@ import uk.ac.ebi.spot.gwas.annotation.GWASParamName;
 public class SearchStudyParams {
 
     @GWASParamName("pubmed_id")
-    @Parameter(name = "pubmed_id", description = "Publication Id")
+    @Parameter(name = "pubmed_id")
     String pubmedId = null;
 
     @GWASParamName("disease_trait")
@@ -42,8 +42,10 @@ public class SearchStudyParams {
     @Parameter(name ="accession_id")
     String accessionId = null;
 
+    @Parameter(name ="cohort")
     String cohort = null;
 
+    @Parameter(name ="gxe")
     Boolean gxe = null;
 
     @GWASParamName("ancestral_group")

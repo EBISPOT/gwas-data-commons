@@ -29,8 +29,10 @@ public class SearchSnpParams {
     @Parameter(name = "pubmed_id")
     String pubmedId = null;
 
+    @Parameter(name = "chromosome")
     String chromosome = null;
 
+    @Parameter(name = "gene")
     String gene =  null;
 
 }
