@@ -176,7 +176,7 @@ public class Study implements Trackable {
                  Boolean gxg,
 //                 Boolean genomewideArray,
 //                 Boolean targetedArray,
-                 Integer snpCount,
+                     Integer snpCount,
                  String qualifier,
                  Boolean imputed,
                  Boolean pooled,
