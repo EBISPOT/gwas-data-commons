@@ -165,6 +165,8 @@ public class Study implements Trackable {
     @JsonIgnore
     private Collection<StudyNote> notes = new ArrayList<>();
 
+
+
     // JPA no-args constructor
     public Study() {
     }
@@ -196,7 +198,8 @@ public class Study implements Trackable {
                  Housekeeping housekeeping,
                  StudyReport studyReport, Collection<Event> events,
                  Collection<SingleNucleotidePolymorphism> snps,
-                 Collection<GenotypingTechnology> genotypingTechnologies) {
+                 Collection<GenotypingTechnology> genotypingTechnologies
+                 ) {
         this.initialSampleSize = initialSampleSize;
         this.replicateSampleSize = replicateSampleSize;
         this.cnv = cnv;
@@ -522,4 +525,5 @@ public class Study implements Trackable {
     public void setParentStudyEfoTraits(Collection<EfoTrait> parentStudyEfoTraits) {
         this.parentStudyEfoTraits = parentStudyEfoTraits;
     }
+
 }

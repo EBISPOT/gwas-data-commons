@@ -45,6 +45,11 @@ public class Gene {
                inverseJoinColumns = @JoinColumn(name = "ASSOCIATION_ID"))
     private Collection<Association> associations;
 
+    @ManyToMany(mappedBy = "mappedGenes")
+    private Collection<Association> mappedGeneAssociations;
+
+
+
 
     @ManyToMany(mappedBy = "genes")
     private Collection<SingleNucleotidePolymorphism> snps;
@@ -140,5 +145,13 @@ public class Gene {
 
     public void setSnps(Collection<SingleNucleotidePolymorphism> snps) {
         this.snps = snps;
+    }
+
+    public Collection<Association> getMappedGeneAssociations() {
+        return mappedGeneAssociations;
+    }
+
+    public void setMappedGeneAssociations(Collection<Association> mappedGeneAssociations) {
+        this.mappedGeneAssociations = mappedGeneAssociations;
     }
 }
