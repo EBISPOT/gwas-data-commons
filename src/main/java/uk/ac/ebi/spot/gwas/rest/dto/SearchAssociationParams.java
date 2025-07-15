@@ -37,4 +37,12 @@ public class SearchAssociationParams {
     @Parameter(name = "show_child_trait")
     Boolean showChildTrait = null;
 
+    @GWASParamName("mapped_gene")
+    @Parameter(name = "mapped_gene")
+    String mappedGene = null;
+
+    @GWASParamName("extended_geneset")
+    @Parameter(name = "extended_geneset")
+    Boolean extendedGeneSet = null;
+
 }
