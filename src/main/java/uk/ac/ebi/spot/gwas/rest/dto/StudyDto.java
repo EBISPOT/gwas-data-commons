@@ -23,7 +23,7 @@ import java.util.Set;
         "pooled",
         "study_design_comment",
         "accession_id",
-        "full_pvalue_set",
+        "full_summary_stats_available",
         "user_requested",
         "pubmed_id",
         "platforms",
@@ -118,7 +118,7 @@ public  class StudyDto extends RepresentationModel<StudyDto> {
     private List<EFOWrapperDTO> bgEfoTraits;
 
     @JsonProperty("cohort")
-    private String cohort;
+    private List<String> cohort;
 
     @JsonProperty("array_manufacturer")
     private List<String> arrayManufacturer;
