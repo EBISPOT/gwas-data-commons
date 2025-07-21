@@ -12,9 +12,9 @@ import lombok.Getter;
 @Getter
 public class RiskAlleleWrapperDTO {
 
-    @JsonProperty("risk_allele_name")
-    private String riskAlleleName;
+    @JsonProperty("rs_id")
+    private String rsID;
 
-    @JsonProperty("risk_frequency")
-    private String riskFrequency;
+    @JsonProperty("risk_allele")
+    private String riskAllele;
 }

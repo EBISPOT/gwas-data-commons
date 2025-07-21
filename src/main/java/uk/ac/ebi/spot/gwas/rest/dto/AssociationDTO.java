@@ -37,10 +37,13 @@ import java.util.List;
         "accession_id",
         "locations",
         "mapped_genes",
-        "risk_allele",
+        "snp_risk_allele",
+        "effect_allele",
         "bg_efo_traits",
         "pubmed_id",
         "first_author",
+        "ci_lower",
+        "ci_upper",
         "_links"
 })
 @Data
@@ -128,8 +131,11 @@ public class AssociationDTO  extends RepresentationModel<AssociationDTO> {
     @JsonProperty("mapped_genes")
     private List<String> mappedGenes;
 
-    @JsonProperty("risk_allele")
+    @JsonProperty("snp_risk_allele")
     private List<String> riskAllele;
+
+    @JsonProperty("effect_allele")
+    private List<RiskAlleleWrapperDTO> effectAlleles;
 
     @JsonProperty("bg_efo_traits")
     private List<EFOWrapperDTO> bgEfoTraits;
@@ -139,6 +145,12 @@ public class AssociationDTO  extends RepresentationModel<AssociationDTO> {
 
     @JsonProperty("first_author")
     private String firstAuthor;
+
+    @JsonProperty("ci_lower")
+    private Float ciLower;
+
+    @JsonProperty("ci_upper")
+    private Float ciUpper;
 
 
 }
