@@ -47,6 +47,7 @@ public class ExceptionHandlerAdvice extends ResponseEntityExceptionHandler {
     @ExceptionHandler(java.lang.IllegalArgumentException.class)
     public ResponseEntity<ErrorResponse> handleIllegalArgumentExceptionException(java.lang.IllegalArgumentException ex, HttpServletRequest req) {
         ErrorResponse error = ErrorResponse.basicResponse(HttpStatus.NOT_ACCEPTABLE, ex, req, dateFormat);
+        log.error("Exception stacktrace "+ ex.getMessage(), ex);
         log.error(error.toString());
         return new ResponseEntity<>(error, HttpStatus.NOT_ACCEPTABLE);
     }

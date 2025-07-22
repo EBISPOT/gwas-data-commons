@@ -32,7 +32,13 @@ public class SearchSnpParams {
     @Parameter(name = "chromosome")
     String chromosome = null;
 
-    @Parameter(name = "gene")
-    String gene =  null;
+    @GWASParamName("mapped_gene")
+    @Parameter(name = "mapped_gene")
+    String mappedGene = null;
+
+    @GWASParamName("extended_geneset")
+    @Parameter(name = "extended_geneset")
+    Boolean extendedGeneSet = null;
+
 
 }
