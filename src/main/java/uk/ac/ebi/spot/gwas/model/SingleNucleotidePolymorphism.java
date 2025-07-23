@@ -58,6 +58,12 @@ public class SingleNucleotidePolymorphism {
                inverseJoinColumns = @JoinColumn(name = "GENE_ID"))
     private Collection<Gene> genes = new ArrayList<>();
 
+    @ManyToMany
+    @JoinTable(name = "SNP_MAPPED_GENE",
+    joinColumns =  @JoinColumn(name = "SNP_ID"),
+    inverseJoinColumns = @JoinColumn(name = "GENE_ID"))
+    private Collection<Gene> mappedSnpGenes = new ArrayList<>();
+
 //    @ManyToMany(mappedBy = "snps")
     @ManyToMany
     @JoinTable(name = "STUDY_SNP_VIEW",
@@ -84,6 +90,7 @@ public class SingleNucleotidePolymorphism {
                                         SingleNucleotidePolymorphism currentSnp,
                                         Collection<Association> associations,
                                         Collection<Gene> genes,
+                                        Collection<Gene> mappedSnpGenes,
                                         Collection<Study> studies) {
         this.rsId = rsId;
         this.merged = merged;
@@ -95,6 +102,7 @@ public class SingleNucleotidePolymorphism {
         this.currentSnp = currentSnp;
         this.associations = associations;
         this.genes = genes;
+        this.mappedSnpGenes = mappedSnpGenes;
         this.studies = studies;
     }
 
@@ -186,5 +194,13 @@ public class SingleNucleotidePolymorphism {
 
     public void setStudies(Collection<Study> studies) {
         this.studies = studies;
+    }
+
+    public Collection<Gene> getMappedSnpGenes() {
+        return mappedSnpGenes;
+    }
+
+    public void setMappedSnpGenes(Collection<Gene> mappedSnpGenes) {
+        this.mappedSnpGenes = mappedSnpGenes;
     }
 }
