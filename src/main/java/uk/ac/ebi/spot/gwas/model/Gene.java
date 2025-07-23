@@ -54,6 +54,9 @@ public class Gene {
     @ManyToMany(mappedBy = "genes")
     private Collection<SingleNucleotidePolymorphism> snps;
 
+    @ManyToMany(mappedBy = "mappedSnpGenes")
+    private Collection<SingleNucleotidePolymorphism> mappedGeneSnps;
+
     // JPA no-args constructor
     public Gene() {
     }
@@ -153,5 +156,13 @@ public class Gene {
 
     public void setMappedGeneAssociations(Collection<Association> mappedGeneAssociations) {
         this.mappedGeneAssociations = mappedGeneAssociations;
+    }
+
+    public Collection<SingleNucleotidePolymorphism> getMappedGeneSnps() {
+        return mappedGeneSnps;
+    }
+
+    public void setMappedGeneSnps(Collection<SingleNucleotidePolymorphism> mappedGeneSnps) {
+        this.mappedGeneSnps = mappedGeneSnps;
     }
 }
