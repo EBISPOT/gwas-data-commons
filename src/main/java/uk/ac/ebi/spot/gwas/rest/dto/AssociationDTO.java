@@ -131,10 +131,10 @@ public class AssociationDTO  extends RepresentationModel<AssociationDTO> {
     @JsonProperty("mapped_genes")
     private List<String> mappedGenes;
 
-    @JsonProperty("snp_risk_allele")
+    @JsonProperty("snp_effect_allele")
     private List<String> riskAllele;
 
-    @JsonProperty("effect_allele")
+    @JsonProperty("snp_allele")
     private List<RiskAlleleWrapperDTO> effectAlleles;
 
     @JsonProperty("bg_efo_traits")
