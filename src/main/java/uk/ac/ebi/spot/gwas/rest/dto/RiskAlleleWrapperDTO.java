@@ -15,6 +15,6 @@ public class RiskAlleleWrapperDTO {
     @JsonProperty("rs_id")
     private String rsID;
 
-    @JsonProperty("risk_allele")
+    @JsonProperty("effect_allele")
     private String riskAllele;
 }
