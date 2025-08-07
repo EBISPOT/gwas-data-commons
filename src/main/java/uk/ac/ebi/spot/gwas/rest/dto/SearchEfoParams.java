@@ -23,4 +23,12 @@ public class SearchEfoParams {
     @GWASParamName("pubmed_id")
     @Parameter(name = "pubmed_id")
     private String pubmedId;
+
+    @GWASParamName("mapped_gene")
+    @Parameter(name = "mapped_gene")
+    String mappedGene = null;
+
+    @GWASParamName("extended_geneset")
+    @Parameter(name = "extended_geneset")
+    Boolean extendedGeneSet = null;
 }
