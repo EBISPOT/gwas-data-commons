@@ -5,7 +5,7 @@
 
     <groupId>uk.ac.ebi.spot.gwas</groupId>
     <artifactId>gwas-data-commons</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.2-SNAPSHOT</version>
     <name>gwas-data-commons</name>
     <packaging>jar</packaging>
     <!--    <parent>
