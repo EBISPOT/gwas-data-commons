@@ -26,9 +26,9 @@ public class PmidImportReporting {
 
     private String associationMapping;
 
-    private String associationApproved;
+    private Integer associationApproved;
 
-    private String studiesPublished;
+    private Integer studiesPublished;
 
     private Date startDate;
 
@@ -41,4 +41,8 @@ public class PmidImportReporting {
     private String curatorEmail;
 
     private String submissionType;
+
+    private Integer associationMapped;
+
+    private Integer associationTotal;
 }
