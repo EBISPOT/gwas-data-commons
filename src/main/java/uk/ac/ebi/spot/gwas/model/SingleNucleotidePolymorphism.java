@@ -19,6 +19,7 @@ public class SingleNucleotidePolymorphism {
     @GeneratedValue
     private Long id;
 
+    @Column(unique = true)
     private String rsId;
 
     private Long merged;

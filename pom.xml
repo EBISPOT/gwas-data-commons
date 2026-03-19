@@ -5,7 +5,7 @@
 
     <groupId>uk.ac.ebi.spot.gwas</groupId>
     <artifactId>gwas-data-commons</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.2-SNAPSHOT</version>
     <name>gwas-data-commons</name>
     <packaging>jar</packaging>
     <!--    <parent>
@@ -229,6 +229,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-hateoas</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
 
         <dependency>
